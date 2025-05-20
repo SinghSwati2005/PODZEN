@@ -4,7 +4,7 @@ import axios from 'axios';
 const Motivation = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+const API_KEY =import.meta.env.VITE_YOUTUBE_API_KEY;
   // Fetch podcasts when the component mounts
   useEffect(() => {
     const fetchPodcasts = async () => {
@@ -12,7 +12,7 @@ const Motivation = () => {
       try {
         // Update the search query for motivation and inspiration podcasts
         const response = await axios.get(
-          'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=motivation|inspiration|goal setting|self improvement|life hacks&type=video&key=AIzaSyD5HfY6QUsjo0a-kGXHxxgHDQ4awKk2hxA'
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=motivation|inspiration|goal setting|self improvement|life hacks&type=video&key=${API_KEY}`
         );
         setPodcasts(response.data.items);
       } catch (error) {

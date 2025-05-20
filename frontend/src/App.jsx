@@ -5,7 +5,7 @@ import AuthLayout from "./layout/AuthLayout";
 import Home from "./page/Home";
 import Signup from "./page/Signup";
 import Login from "./page/Login.jsx";
-import Categories from "./page/Categories.jsx";
+
 import AllPodcasts from "./page/AllPodcasts.jsx";
 import ForgotPassword from "./page/ForgotPassword.jsx";
 import KnowledgeLearning from './page/KnowledgeLearning';
@@ -13,7 +13,9 @@ import RelaxChill from './page/RelaxChill.jsx';
 import Motivation from './page/Motivation.jsx';
 import Mental from './page/Mental.jsx';
 import Student from './page/Student.jsx';
-import Profile from './page/Profile.jsx';
+
+import Categories from './page/categories.jsx';
+import Profile from './page/profile.jsx';
 
 const App = () => {
   return (

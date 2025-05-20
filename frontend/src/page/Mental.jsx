@@ -4,7 +4,7 @@ import axios from 'axios';
 const MentalHealth = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+const API_KEY =import.meta.env.VITE_YOUTUBE_API_KEY;
   // Fetch podcasts when the component mounts
   useEffect(() => {
     const fetchPodcasts = async () => {
@@ -12,7 +12,7 @@ const MentalHealth = () => {
       try {
         // Search query focused on mental health for students, stress management, and coping strategies
         const response = await axios.get(
-          'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=mental health|stress management|coping with studies|academic pressure|student well-being&type=video&key=AIzaSyD5HfY6QUsjo0a-kGXHxxgHDQ4awKk2hxA'
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=mental health|stress management|coping with studies|academic pressure|student well-being&type=video&key=${API_KEY}`
         );
         setPodcasts(response.data.items);
       } catch (error) {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Your YouTube Data API Key
-const API_KEY = 'AIzaSyD5HfY6QUsjo0a-kGXHxxgHDQ4awKk2hxA'; // Replace with your actual API key
+const API_KEY =import.meta.env.VITE_YOUTUBE_API_KEY; // Replace with your actual API key
 
 // Function to fetch all podcasts from YouTube using the API URL
 const fetchPodcasts = async (pageToken = '') => {

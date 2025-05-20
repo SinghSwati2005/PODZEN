@@ -4,7 +4,7 @@ import axios from 'axios';
 const RelaxChill = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+const API_KEY =import.meta.env.VITE_YOUTUBE_API_KEY;
   // Fetch podcasts when the component mounts
   useEffect(() => {
     const fetchPodcasts = async () => {
@@ -12,7 +12,7 @@ const RelaxChill = () => {
       try {
         // Update the search query for relaxation and chill podcasts
         const response = await axios.get(
-          'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=relaxation|chill music|meditation|study music&type=video&key=AIzaSyD5HfY6QUsjo0a-kGXHxxgHDQ4awKk2hxA'
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=relaxation|chill music|meditation|study music&type=video&key=${API_KEY}`
         );
         setPodcasts(response.data.items);
       } catch (error) {
